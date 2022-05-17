@@ -15,9 +15,9 @@ class PostsController extends Controller
     {
         $data = request()->validate([
             'caption' => 'required',
-            'image' => 'required',
+            'image' => ['required', 'image'],
         ]);
 
-        dd('success');
+        dd(request()->all());
     }
 }
