@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -17,6 +19,10 @@ class PostsController extends Controller
             'caption' => 'required',
             'image' => ['required', 'image'],
         ]);
+
+
+
+        //Post::create($data);
 
         dd(request()->all());
     }
