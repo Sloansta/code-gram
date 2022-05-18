@@ -17,12 +17,13 @@ class PostsController extends Controller
     {
         $data = request()->validate([
             'caption' => 'required',
-            'image' => ['required', 'image'],
+            'image' => 'required|image'
         ]);
 
+        $post = new Post();
 
-
-        //Post::create($data);
+        $post->caption = $data['caption'];
+        $post->save();
 
         dd(request()->all());
     }

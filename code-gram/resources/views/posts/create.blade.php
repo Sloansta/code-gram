@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <form action="/p" enctype="multipart/form-data" method="post">
-
         @csrf
+
         <div class="row">
             <div class="col-8 offset-2">
                 <div class="row">
@@ -13,7 +13,7 @@
 
                 <div class="row mb-3">
                     <label for="caption" class="col-md-4 col-form-label">Post Caption</label>
-                    <input id="name" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}" required autocomplete="caption" autofocus>
+                    <input id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}" required autocomplete="caption" autofocus>
 
                     @error('caption')
                     <span class="invalid-feedback" role="alert">
